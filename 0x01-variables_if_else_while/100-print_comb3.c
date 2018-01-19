@@ -8,32 +8,27 @@
 int main(void)
 {
 	int a = 48;
-	int b = a + 1;
+	int b = 48;
 
-	while (a <= 57 && b <= 57)
+	while (a <= 57)
 	{
-		putchar(a);
-		putchar(b);
-		if (a < 56 || b < 57)
+		b = (a + 1);
+		while (b <= 57)
 		{
-			putchar(',');
-			putchar(' ');
-			if (b < 57)
+			putchar(a);
+			putchar(b);
+			if (a < 56 || b < 57)
 			{
-				b++;
+				putchar(',');
+				putchar(' ');
 			}
 			else
 			{
-				a++;
-				b = a + 1;
+				putchar('\n');
 			}
-		}
-		else
-		{
-			a++;
 			b++;
 		}
+		a++;
 	}
-	putchar('\n');
 	return (0);
 }
