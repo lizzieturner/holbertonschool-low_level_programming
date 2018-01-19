@@ -8,13 +8,13 @@
 int main(void)
 {
 	int a;
-	char comma;
-	char space;
-	char end;
+	int comma;
+	int space;
+	int end;
 
 	a = 48;
-	comma = ',';
-	space = ' ';
+	comma = 44;
+	space = 32;
 	end = '\n';
 
 	while (a <= 57)
