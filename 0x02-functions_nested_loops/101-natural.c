@@ -18,7 +18,7 @@ int main(void)
 		sum_a += a * 3;
 		a++;
 	}
-	while (b * 3 < 1024)
+	while (b * 5 < 1024)
 	{
 		sum_b += b * 5;
 		b++;
