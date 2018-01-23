@@ -8,19 +8,19 @@
 
 int main(void)
 {
-	int a = 1;
-	int b = 1;
+	int a = 0;
+	int b = 0;
 	int sum_a = 0;
 	int sum_b = 0;
 
 	while (a * 3 < 1024)
 	{
-		sum_a += a * 3;
+		sum_a = sum_a + (a * 3);
 		a++;
 	}
 	while (b * 5 < 1024)
 	{
-		sum_b += b * 5;
+		sum_b = sum_b + (b * 3);
 		b++;
 	}
 
