@@ -3,29 +3,23 @@
 /**
  * main - entry point
  *
- * Return: 0 if succesful
+ * Return: 0 if successful
  */
 
 int main(void)
 {
-	int a = 0;
-	int sum_a = 0;
-	int sum_b = 0;
-	int total = 0;
+	int mult = 0;
+	int sum = 0;
 
-	while (a * 3 < 1024)
+	while (mult < 1024)
 	{
-		sum_a += a * 3;
-		a++;
+		if (mult % 3 == 0 || mult % 5 == 0)
+		{
+			sum += mult;
+		}
+		mult++;
 	}
-	while (a * 5 < 1024)
-	{
-		sum_b += a * 5;
-		a++;
-	}
-
-	total = sum_a + sum_b;
-	printf("%d\n", total);
+	printf("%d\n", sum);
 
 	return (0);
 }
