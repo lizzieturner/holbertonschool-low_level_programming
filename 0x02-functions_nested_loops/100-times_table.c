@@ -13,34 +13,43 @@ void print_times_table(int n)
 	{
 		while (a <= n)
 		{
-			int b = 1;
+			int b = 0;
 
-			_putchar('0');
 			while (b <= n)
 			{
 				int p = a * b;
 
-				_putchar(',');
-				_putchar(' ');
-				if (p < 10)
+				if (b == 0)
 				{
-					_putchar(' ');
-					_putchar(' ');
 					_putchar(p + '0');
+					b++;
 				}
-				else if (p > 99)
-				{
-					_putchar((p / 100) + '0');
-					_putchar(((p / 10) % 10) + '0');
-					_putchar((p % 10) + '0');
-				}
+
+
 				else
 				{
+					_putchar(',');
 					_putchar(' ');
-					_putchar((p / 10) + '0');
-					_putchar((p % 10) + '0');
+					if (p < 10)
+					{
+						_putchar(' ');
+						_putchar(' ');
+						_putchar(p + '0');
+					}
+					else if (p > 99)
+					{
+						_putchar((p / 100) + '0');
+						_putchar(((p / 10) % 10) + '0');
+						_putchar((p % 10) + '0');
+					}
+					else
+					{
+						_putchar(' ');
+						_putchar((p / 10) + '0');
+						_putchar((p % 10) + '0');
+					}
+					b++;
 				}
-				b++;
 			}
 			_putchar('\n');
 			a++;
