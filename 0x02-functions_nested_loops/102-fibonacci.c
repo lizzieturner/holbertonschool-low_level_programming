@@ -20,10 +20,8 @@ int main(void)
 		long fib = a + b;
 
 		printf("%li, ", fib);
-
 		a = b;
 		b = fib;
-
 		n++;
 	}
 
