@@ -31,12 +31,10 @@ int main(void)
 	{
 		long fib = a + b;
 
-                printf("%li\n", fib);
-
-                a = b;
-                b = fib;
-
-                n++;
+		printf("%li\n", fib);
+		a = b;
+		b = fib;
+		n++;
 	}
 
 	return (0);
