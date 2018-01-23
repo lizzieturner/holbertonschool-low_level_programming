@@ -1,8 +1,10 @@
 #include "holberton.h"
 
 /**
- *function -
- *Return:
+ * _isalpha  - checks for any alphabetic character
+ * @c: character to check
+ *
+ * Return: 1 if c is a letter, 0 otherwise
  */
 
 int _isalpha(int c)
