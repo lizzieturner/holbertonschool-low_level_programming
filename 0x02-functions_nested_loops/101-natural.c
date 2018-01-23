@@ -13,12 +13,12 @@ int main(void)
 	int sum_a = 0;
 	int sum_b = 0;
 
-	while (a < 1024)
+	while (a * 3 < 1024)
 	{
 		sum_a += a * 3;
 		a++;
 	}
-	while (b < 1024)
+	while (b * 3 < 1024)
 	{
 		sum_b += b * 5;
 		b++;
