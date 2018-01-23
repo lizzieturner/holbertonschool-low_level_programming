@@ -8,14 +8,14 @@
 void print_times_table(int n)
 {
 	int a = 0;
-	int b = 1;
 
 	if (n > 0 && n < 16)
 	{
 		while (a <= n)
 		{
+			int b = 1;
+
 			_putchar('0');
-			b = 1;
 			while (b <= n)
 			{
 				int p = a * b;
