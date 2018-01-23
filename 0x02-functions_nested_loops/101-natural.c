@@ -9,22 +9,23 @@
 int main(void)
 {
 	int a = 0;
-	int b = 0;
 	int sum_a = 0;
 	int sum_b = 0;
+	int total = 0;
 
 	while (a * 3 < 1024)
 	{
-		sum_a = sum_a + (a * 3);
+		sum_a += a * 3;
 		a++;
 	}
-	while (b * 5 < 1024)
+	while (a * 5 < 1024)
 	{
-		sum_b = sum_b + (b * 3);
-		b++;
+		sum_b += a * 5;
+		a++;
 	}
 
-	printf("%d\n", sum_a + sum_b);
+	total = sum_a + sum_b;
+	printf("%d\n", total);
 
 	return (0);
 }
