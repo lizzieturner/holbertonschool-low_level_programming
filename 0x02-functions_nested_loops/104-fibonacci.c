@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <float.h>
 
 /**
  * main - entry point in c
@@ -8,30 +9,28 @@
 
 int main(void)
 {
-	unsigned long a = 1;
-	unsigned long b = 2;
+	long double a = 1;
+	long double b = 2;
 	int n = 3;
 
-	printf("%lu, ", a);
-	printf("%lu, ", b);
+	printf("%0.21Le, ", a);
+	printf("%0.21Le, ", b);
 
 	while (n < 98)
 	{
-		unsigned long fib = a + b;
+		long double fib = a + b;
 
-		printf("%lu, ", fib);
-
+		printf("%0.21Le, ", fib);
 		a = b;
 		b = fib;
-
 		n++;
 	}
 
 	while (n == 98)
 	{
-		unsigned long fib = a + b;
+		long double fib = a + b;
 
-		printf("%lu\n", fib);
+		printf("%0.21Le\n", fib);
 		a = b;
 		b = fib;
 		n++;
