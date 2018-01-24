@@ -39,7 +39,7 @@ int main(void)
 	print_big_num(a_big, a_little);
 	print_big_num(b_big, b_little);
 
-	while (n < 98)
+	while (n < 99)
 	{
 		fib_little = a_little + b_little;
 		fib_big = a_big + b_big;
@@ -57,13 +57,6 @@ int main(void)
 		n++;
 	}
 
-	fib_little = a_little + b_little;
-	fib_big = a_big + b_big;
-	carry = fib_little / 10000000000;
-
-	fib_little = fib_little % 10000000000;
-	fib_big = fib_big + carry;
-	printf("%lu%lu\n", fib_big, fib_little);
-
+	putchar('\n');
 	return (0);
 }
