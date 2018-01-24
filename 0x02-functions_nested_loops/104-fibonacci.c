@@ -7,15 +7,15 @@
  * @little: second number component (digits 11-end)
  */
 
-void print_big_num(unsigned long big, unsigned long little)
+void print_big_num(long big, long little)
 {
 	if (big == 0)
 	{
-		printf("%lu, ", little);
+		printf("%ld, ", little);
 	}
 	else
 	{
-	printf("%lu%lu, ", big, little);
+	printf("%ld%ld, ", big, little);
 	}
 }
 
@@ -27,19 +27,19 @@ void print_big_num(unsigned long big, unsigned long little)
 
 int main(void)
 {
-	unsigned long a_big = 0;
-	unsigned long a_little = 1;
-	unsigned long b_big = 0;
-	unsigned long b_little = 2;
-	unsigned long fib_little = 0;
-	unsigned long fib_big = 0;
+	long a_big = 0;
+	long a_little = 1;
+	long b_big = 0;
+	long b_little = 2;
+	long fib_little = 0;
+	long fib_big = 0;
 	int carry = 0;
-	int n = 3;
+	int n = 0;
 
 	print_big_num(a_big, a_little);
 	print_big_num(b_big, b_little);
 
-	while (n < 99)
+	while (n < 95)
 	{
 		fib_little = a_little + b_little;
 		fib_big = a_big + b_big;
@@ -57,6 +57,13 @@ int main(void)
 		n++;
 	}
 
-	putchar('\n');
+	fib_little = a_little + b_little;
+	fib_big = a_big + b_big;
+	carry = fib_little / 10000000000;
+
+	fib_little = fib_little % 10000000000;
+	fib_big = fib_big + carry;
+	printf("%ld%ld\n", fib_big, fib_little);
+
 	return (0);
 }
