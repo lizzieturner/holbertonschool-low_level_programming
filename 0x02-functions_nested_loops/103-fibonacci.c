@@ -13,7 +13,7 @@ int main(void)
 	int fib = 0;
 	int sum = 2;
 
-	while ( fib < 4000000)
+	while (fib < 4000000)
 	{
 		fib = a + b;
 
@@ -26,7 +26,7 @@ int main(void)
 		b = fib;
 	}
 
-	printf("%d\n", sum);
+	printf("%i\n", sum);
 
 	return (0);
 }
