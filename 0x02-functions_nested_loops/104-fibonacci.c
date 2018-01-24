@@ -15,7 +15,7 @@ void print_big_num(long big, long little)
 	}
 	else
 	{
-	printf("%ld%ld, ", big, little);
+		printf("%ld%010ld, ", big, little);
 	}
 }
 
