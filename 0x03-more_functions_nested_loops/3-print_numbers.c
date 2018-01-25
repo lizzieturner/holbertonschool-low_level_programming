@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * print_numbers - checks input for a digit 0-9
-  */
+ * print_numbers - prints numbers 0-9
+ */
 
 void print_numbers(void)
 {
