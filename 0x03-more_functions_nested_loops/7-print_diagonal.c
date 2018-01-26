@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * print_diagonal - draw a straight line in the terminal
- * @n: length of line
+ * print_diagonal - draw a diagonal in the terminal
+ * @n: length of diagonal
  */
 
 void print_diagonal(int n)
