@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 This directory contains 9 projects written in C related to pointers, arrays, and strings.
 
 0. Write a function that takes a pointer to an int as parament and updates the value it points to to 98
@@ -11,6 +10,3 @@ This directory contains 9 projects written in C related to pointers, arrays, and
 7. Write a function that prints the second half of a string, followed by a new line
 8. Write a function that prints *n* elements of an array, followed by a new line 
 9. Write a function that copies the string pointed to by **src** including the terminating null byte, to the buffer point to by **dest**
-=======
-This repository contains several projects written in the C programming language completed as part of the Holberton School curriculum. 
->>>>>>> f0e80786eb49f27bc1779f95c50e53638e5c8ae2
