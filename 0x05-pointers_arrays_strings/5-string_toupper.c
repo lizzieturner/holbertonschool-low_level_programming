@@ -2,13 +2,14 @@
 
 /**
  * string_toupper - changes all lowercase letters in a string to uppercase
+ * @s: string
  *
  * Return: pointer to string
  */
 
 char *string_toupper(char *s)
 {
-	int index;
+	int index = 0;
 
 	while (*(s + index) != '\0')
 	{
