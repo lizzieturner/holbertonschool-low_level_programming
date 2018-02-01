@@ -5,7 +5,7 @@
  * @s1: first string
  * @s2: second string
  *
- * Return: -1 if first string is less than second string, 1 if first string is greater than second string, and 0 if strings are equal
+ * Return: difference of two strings (first minus second) or 0 if equal
  */
 
 int _strcmp(char *s1, char *s2)
