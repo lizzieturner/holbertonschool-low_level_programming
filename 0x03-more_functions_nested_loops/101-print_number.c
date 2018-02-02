@@ -27,7 +27,6 @@ void print_number(int n)
 	dig_9 = (n / 10) % 10; sum_9 = sum_8 + dig_9;
 	last = n % 10;
 
-
 	if (sum_1 != 0)
 		_putchar(dig_1 + '0');
 	if (sum_2 != 0)
