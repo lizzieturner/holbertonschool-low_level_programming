@@ -10,13 +10,15 @@
 
 char *cap_string(char *s)
 {
-	unsigned int index, special_index;
+	int index, special_index;
 
 	char special[13] = {' ', '\t', '\n', ',', ';', '.', '!',
 			    '?', '"', '(', ')', '{', '}'};
 
 	for (index = 0; s[index] != '\0'; index++)
 	{
+		if (s[0] >= 'a' && s[0] <= 'z')
+			s[0] -= 32;
 		for (special_index = 0; special_index < 13; special_index++)
 		{
 			if (s[index] == special[special_index])
