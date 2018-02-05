@@ -20,7 +20,7 @@ char *_strchr(char *s, char c)
 
 	length--;
 
-	for (index = 0; index < length; index++)
+	for (index = 0; index <= length; index++)
 		if (s[index] == c)
 		{
 			s = &s[index];
