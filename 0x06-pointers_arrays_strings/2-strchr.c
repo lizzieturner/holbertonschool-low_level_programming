@@ -15,10 +15,8 @@ char *_strchr(char *s, char c)
 
 	length = 0;
 
-	while (length != '\0')
+	while (s[length] != '\0')
 		length++;
-
-	length--;
 
 	for (index = 0; index <= length; index++)
 		if (s[index] == c)
