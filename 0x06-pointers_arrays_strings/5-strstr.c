@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+
 /**
  * _strstr - finds the first occurence of a substring
  * @haystack: string
@@ -24,7 +24,7 @@ char *_strstr(char *haystack, char *needle)
 
 		while (*p != 0)
 		{
-			if ( *t != *p )
+			if (*t != *p)
 				break;
 			t++;
 			p++;
