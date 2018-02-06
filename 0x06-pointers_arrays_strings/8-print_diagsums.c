@@ -10,21 +10,22 @@
 
 void print_diagsums(int *a, int size)
 {
-	unsigned int sum_a, sum_b;
-	int index_a = 1;
-	int index_b = 0;
+	int sum_1 = 0;
+	int sum_2 = 0;
+	int index_1 = 1;
+	int index_2 = 0;
 
-	while (index_a <= size)
+	while (index_1 < size)
 	{
-		sum_a += a[(size - 1) * index_a];
-		index_a++;
+		sum_1 += a[(size + 1) * index_1];
+		index_1++;
 	}
 
-	while (index_b < size)
+	while (index_2 <= size)
 	{
-		sum_b += a[(size + 1) * index_b];
-		index_b++;
+		sum_2 += a[(size - 1) * index_2];
+		index_2++;
 	}
 
-	printf("%u, %u\n", sum_b, sum_a);
+	printf("%i, %i\n", sum_1, sum_2);
 }
