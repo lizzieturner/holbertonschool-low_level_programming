@@ -21,7 +21,7 @@ unsigned int _strspn(char *s, char *accept)
 		for (a_index = 0; accept[a_index]; a_index++)
 		{
 			if (s[index] == accept[a_index])
-			    count++;
+				count++;
 		}
 
 		if (count == x)
