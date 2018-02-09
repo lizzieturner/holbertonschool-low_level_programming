@@ -11,4 +11,6 @@ MANDATORY
 4. Write a program that adds positive numbers
 
 ADVANCED
-5.
+5. Write a program that prints the number of coins needed to make change for an amount of money
+   * If there is more than one argument, print ERROR and return 1
+   * If the number is negative, print 0
