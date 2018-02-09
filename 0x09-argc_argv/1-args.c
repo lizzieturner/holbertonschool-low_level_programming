@@ -1,9 +1,16 @@
 #include <stdio.h>
 
-int main(int argc, char *argv[])
+/**
+ * main - entry point function
+ * @argc: number of arguments
+ * @argv: array containing arguments
+ *
+ * Return: 0
+ */
+
+int main(int argc, char __attribute__((__unused__)) *argv[])
 {
-	if (*argv != '\0')
-		printf("%d\n", argc);
+	printf("%d\n", argc);
 
 	return (0);
 }
