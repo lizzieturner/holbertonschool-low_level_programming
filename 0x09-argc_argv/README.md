@@ -1,6 +1,7 @@
 This project contains 5 programs written in C pertaining to argc and argv.
 
 MANDATORY
+
 0. Write a program that prints its name, followed by a new line
    * If you rename the program it will print the new name, without having to recompile
 1. Write a program the prints the number of arguments passed into it, followed by an new line
@@ -11,6 +12,7 @@ MANDATORY
 4. Write a program that adds positive numbers
 
 ADVANCED
+
 5. Write a program that prints the number of coins needed to make change for an amount of money
    * If there is more than one argument, print ERROR and return 1
    * If the number is negative, print 0
