@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	if (cash < 0)
 		printf("0\n");
 
-	if (cash > 0)
+	while (cash > 0)
 	{
 		while (cash >= 25)
 		{
