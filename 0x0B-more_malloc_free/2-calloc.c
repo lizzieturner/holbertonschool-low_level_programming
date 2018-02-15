@@ -12,14 +12,12 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int *new_array, total;
+	unsigned int *new_array;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	total = nmemb * size;
-
-	new_array = malloc(total * sizeof(unsigned int));
+	new_array = malloc(nmemb * sizeof(size));
 
 	if (new_array == NULL)
 		return (NULL);
