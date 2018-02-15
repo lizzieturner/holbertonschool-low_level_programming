@@ -13,7 +13,8 @@
 int *array_range(int min, int max)
 {
 	int *new_array;
-	int length, index;
+	int length;
+	int index = 0;
 	int num = min;
 
 	if (min > max)
@@ -23,9 +24,10 @@ int *array_range(int min, int max)
 
 	new_array = malloc(length * sizeof(int));
 
-	for (index = num; index <= length; index++)
+        while (num <= max)
 	{
 		new_array[index] = num;
+		index++;
 		num++;
 	}
 
