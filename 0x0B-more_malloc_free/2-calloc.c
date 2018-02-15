@@ -12,8 +12,8 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *new_array;
-	int index = 0;
+	unsigned int *new_array;
+	unsigned int index = 0;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
