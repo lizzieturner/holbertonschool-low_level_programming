@@ -14,9 +14,6 @@ void *malloc_checked(unsigned int b)
 {
 	void *new_mem;
 
-	if (b > INT_MAX)
-		b = (double)b;
-
 	new_mem = malloc(b);
 
 	if (new_mem == NULL)
