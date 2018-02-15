@@ -41,15 +41,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 
 	for (index = 0; index < len1; index++)
-		new[index] = s1[index];
+		new_string[index] = s1[index];
 
 	for (index = 0; index < n; index++)
-		new[index + len1] = s2[index];
+		new_string[index + len1] = s2[index];
 
-	return (new);
-
-
-
-
-
+	return (new_string);
 }
