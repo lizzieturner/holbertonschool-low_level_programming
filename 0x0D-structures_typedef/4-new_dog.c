@@ -35,6 +35,8 @@ char *_strcopy(char *dest, char *src, int length)
 	for (i = 0; i < length; i++)
 		dest[i] = src[i];
 
+	dest[i] = '\0';
+
 	return (dest);
 }
 
