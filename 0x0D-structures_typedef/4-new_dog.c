@@ -20,6 +20,25 @@ int _strlen(char *s)
 }
 
 /**
+ * _strcopy - copies a source string to a destination string
+ * @dest: destination string
+ * @src: source string
+ * @length: length of string
+ *
+ * Return: destination string
+ */
+
+char *_strcopy(char *dest, char *src, int length)
+{
+	int i;
+
+	for (i = 0; i < length; i++)
+		dest[i] = src[i];
+
+	return (dest);
+}
+
+/**
  * new_dog - create a new dog
  * @name: name of dog
  * @age: age of dog
@@ -31,7 +50,7 @@ int _strlen(char *s)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-	int name_length, owner_length, index;
+	int name_length, owner_length;
 
 	dog = malloc(sizeof(dog_t));
 
@@ -57,13 +76,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	for (index = 0; index < name_length; index++)
-		dog->name[index] = name[index];
-
+	dog->name = _strcopy(dog->name, name, name_length);
 	dog->age = age;
-
-	for (index = 0; index < owner_length; index++)
-		dog->owner[index] = owner[index];
+	dog->owner = _strcopy(dog->owner, owner, owner_length);
 
 	return (dog);
 }
