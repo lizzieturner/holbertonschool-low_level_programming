@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdlib.h>
 #include "3-calc.h"
 
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 
 	f = get_op_func(o);
 
-	if (f == NULL)
+	if (f == NULL || argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
