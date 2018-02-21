@@ -42,5 +42,5 @@ int main(int argc, char **argv)
 	num = f(a, b);
 	printf("%i\n", num);
 
-	return (num);
+	return (0);
 }
