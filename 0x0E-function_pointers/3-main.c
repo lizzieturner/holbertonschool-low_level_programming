@@ -14,8 +14,7 @@ int main(int argc, char *argv[])
 {
 	int (*f)(int, int);
 	int num;
-	int a = atoi(argv[1]);
-	int b = atoi(argv[3]);
+	int a, b;
 
 	if (argc != 4)
 	{
@@ -23,6 +22,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
 	f = get_op_func(argv[2]);
 
 	if (f == NULL)
