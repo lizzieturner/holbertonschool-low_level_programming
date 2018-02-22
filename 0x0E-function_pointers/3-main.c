@@ -16,8 +16,6 @@ int main(int argc, char **argv)
 	int num;
 	int a = atoi(argv[1]);
 	int b = atoi(argv[3]);
-	char *o = argv[2];
-	char x = argv[2][0];
 
 	if (argc != 4)
 	{
@@ -25,7 +23,7 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	f = get_op_func(o);
+	f = get_op_func(argv[2]);
 
 	if (f == NULL)
 	{
@@ -33,7 +31,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	if ((x == '/' || x == '%') && b == 0)
+	if ((*argv[2] == '/' || *argv[2] == '%') && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
