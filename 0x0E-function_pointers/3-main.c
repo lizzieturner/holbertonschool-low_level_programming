@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	}
 
 	num = f(a, b);
-	printf("%i\n", num);
+	printf("%d\n", num);
 
 	return (0);
 }
