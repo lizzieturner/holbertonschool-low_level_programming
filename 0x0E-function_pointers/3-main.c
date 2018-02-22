@@ -3,14 +3,14 @@
 #include "3-calc.h"
 
 /**
- * main - main function
+ * main - function
  * @argc: number of arguments
  * @argv: array of arguments
  *
  * Return: value found using correct function (sum, etc)
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int (*f)(int, int);
 	int num;
