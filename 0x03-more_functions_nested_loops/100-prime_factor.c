@@ -13,10 +13,10 @@ int main(void)
 
 	num = 612852475143;
 
-	for (test = 3; test < num; test ++)
+	for (test = 3; test < num; test++)
 	{
 		if (num % test == 0)
-		    num /= test;
+			num /= test;
 	}
 
 	printf("%lu\n", num);
