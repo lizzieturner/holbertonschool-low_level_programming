@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
 	op_codes = (char *)main;
 
-	for (index = 0; index < bytes; index++)
+	for (index = 0; index < bytes - 1; index++)
 		printf("%02hhx ", op_codes[index]);
 
 	printf("%02hhx\n", op_codes[index]);
