@@ -24,7 +24,7 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 	f_i = 0;
-	while (format[f_i] != '\0')
+	while (format != NULL && format[f_i] != '\0')
 	{
 		c_i = 0;
 		while (check_type[c_i].c != NULL)
@@ -39,6 +39,7 @@ void print_all(const char * const format, ...)
 		}
 		f_i++;
 	}
+
 	printf("\n");
 	va_end(list);
 }
