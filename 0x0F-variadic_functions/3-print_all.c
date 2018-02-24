@@ -13,13 +13,13 @@ void print_all(const char * const format, ...)
 	int f_i, c_i;
 	va_list list;
 	char *separator = "";
-	char *new_separator = ", ";
 
 	type check_type[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
-		{"s", print_string}
+		{"s", print_string},
+		{NULL, NULL}
 	};
 
 	va_start(list, format);
@@ -27,14 +27,14 @@ void print_all(const char * const format, ...)
 	while (format[f_i] != '\0')
 	{
 		c_i = 0;
-		while (check_type[c_i].c != '\0')
+		while (check_type[c_i].c != NULL)
 		{
 			if (format[f_i] == *check_type[c_i].c)
 			{
 				printf("%s", separator);
 				check_type[c_i].f(list);
 			}
-			separator = new_separator;
+			separator = ", ";
 			c_i++;
 		}
 		f_i++;
