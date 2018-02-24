@@ -33,16 +33,14 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", separator);
 				check_type[c_i].f(list);
+				separator = ", ";
 			}
-			separator = ", ";
 			c_i++;
 		}
 		f_i++;
 	}
-
-	va_end(list);
-
 	printf("\n");
+	va_end(list);
 }
 
 /**
