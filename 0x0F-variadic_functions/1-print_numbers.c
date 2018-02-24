@@ -11,8 +11,6 @@
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	if (n != 0)
-	{
 		unsigned int index;
 		va_list numbers;
 
@@ -26,5 +24,4 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 		printf("%d\n", va_arg(numbers, int));
 		va_end(numbers);
-	}
 }
