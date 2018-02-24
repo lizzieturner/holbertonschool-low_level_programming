@@ -82,11 +82,13 @@ void print_float(va_list list)
 
 void print_string(va_list list)
 {
-	if (list == NULL)
+	char *s = va_arg(list, char *);
+
+	if (s == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
 
-	printf("%s", va_arg(list, char *));
+	printf("%s", s);
 }
