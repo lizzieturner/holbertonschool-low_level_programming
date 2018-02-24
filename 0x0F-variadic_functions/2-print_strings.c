@@ -20,22 +20,20 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 	va_start(strings, n);
 
-	for (index = 0; index <  n - 1; index++)
+	for (index = 0; index <  n; index++)
 	{
 		current = va_arg(strings, char *);
 
 		if (current == NULL)
-			printf("(nil)%s", separator);
+			printf("(nil)");
 
 		else
-			printf("%s%s", current, separator);
+			printf("%s", current);
 
+		if (index != n - 1)
+			printf("%s", separator);
 	}
 
-	current = va_arg(strings, char *);
-
-	if (current != NULL)
-		printf("%s\n", current);
-
+	printf("\n");
 	va_end(strings);
 }
