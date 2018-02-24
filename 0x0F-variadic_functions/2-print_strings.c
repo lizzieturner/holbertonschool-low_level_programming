@@ -24,8 +24,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		current = va_arg(strings, char *);
 
-		if (current != NULL)
+		if (current == NULL)
+			printf("(nil)%s", separator);
+
+		else
 			printf("%s%s", current, separator);
+
 	}
 
 	current = va_arg(strings, char *);
