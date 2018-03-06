@@ -12,6 +12,9 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *current, *runner;
 	size_t h_i, r_i;
 
+	if (h == NULL)
+		return (0);
+
 	current = *h;
 	h_i = 0;
 
@@ -25,7 +28,6 @@ size_t free_listint_safe(listint_t **h)
 				runner = (*h)->next;
 				free(*h);
 				*h = NULL;
-				free(h);
 				return (h_i);
 			}
 			runner = runner->next;
