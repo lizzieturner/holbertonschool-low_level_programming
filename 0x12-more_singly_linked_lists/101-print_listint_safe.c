@@ -20,12 +20,8 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (current != NULL)
 	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		current = current->next;
-
 		runner = head;
-		r_i = 0;
-		while (r_i < c_i)
+		for (r_i = 0; r_i < c_i; r_i++)
 		{
 			if (runner == current)
 			{
@@ -34,8 +30,9 @@ size_t print_listint_safe(const listint_t *head)
 			}
 
 			runner = runner->next;
-			r_i++;
 		}
+		printf("[%p] %d\n", (void *)current, current->n);
+		current = current->next;
 		c_i++;
 	}
 
