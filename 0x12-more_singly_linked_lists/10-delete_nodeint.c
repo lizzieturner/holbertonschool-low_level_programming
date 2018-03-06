@@ -3,7 +3,7 @@
 /**
  * delete_nodeint_at_index - deletes the node at a given position in a list
  * @head: linked list of type listint_t
- * @idx: position to delete node at
+ * @index: position to delete node at
  *
  * Return: 1 if success, -1 if failure
  */
