@@ -32,7 +32,7 @@ size_t free_listint_safe(listint_t **h)
 			runner = runner->next;
 		}
 		current = head->next;
-		free(head);
+		free((void *)head);
 		head = current;
 		h_i++;
 	}
