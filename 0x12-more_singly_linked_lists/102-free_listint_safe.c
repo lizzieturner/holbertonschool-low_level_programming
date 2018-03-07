@@ -19,7 +19,7 @@ size_t free_listint_safe(listint_t **h)
 	head = *h;
 	h_i = 0;
 
-	while (current != NULL)
+	while (head != NULL)
 	{
 		runner = *h;
 		for (r_i = 0; r_i < h_i; r_i++)
@@ -32,10 +32,11 @@ size_t free_listint_safe(listint_t **h)
 			runner = runner->next;
 		}
 		current = head->next;
-		free((void *)head);
+		free(head);
 		head = current;
 		h_i++;
 	}
 
+	*h = NULL;
 	return (h_i);
 }
