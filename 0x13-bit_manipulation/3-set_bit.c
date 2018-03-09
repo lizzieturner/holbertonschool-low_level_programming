@@ -10,13 +10,10 @@
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int bit_set = 1;
-
 	if (n == NULL || index > sizeof(unsigned long int) * 8)
 		return (-1);
 
-	bit_set = 1 << index;
-	*n = *n | bit_set;
+	*n |= 1 << index;
 
 	return (1);
 }
