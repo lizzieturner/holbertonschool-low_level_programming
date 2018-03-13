@@ -36,11 +36,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (close_check == -1)
 		return (0);
 
-	write_actual = write(STDOUT_FILENO, buffer, letters);
-	if (write_actual == -1)
+	write_actual = write(STDOUT_FILENO, buffer, read_actual);
+	if (write_actual == -1 || write_actual != read_actual)
 		return (0);
 
 	free(buffer);
 
-	return (read_actual);
+	return (write_actual);
 }
