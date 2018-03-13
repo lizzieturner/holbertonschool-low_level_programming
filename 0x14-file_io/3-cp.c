@@ -54,11 +54,7 @@ int copy_file(char *file_from, char *file_to)
 {
 	int fd_from, fd_to;
 	ssize_t read_actual, write_actual;
-	char *buffer;
-
-	buffer = malloc(sizeof(char) * 1024);
-	if (buffer == NULL)
-		return (-1);
+	char *buffer[1024];
 
 	fd_from = open(file_from, O_RDONLY);
 	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -67,7 +63,6 @@ int copy_file(char *file_from, char *file_to)
 
 	if (fd_to == -1)
 	{
-		free(buffer);
 		return (-1);
 	}
 
@@ -80,7 +75,6 @@ int copy_file(char *file_from, char *file_to)
 		if (write_actual == -1)
 		{
 			close_all(fd_from, fd_to);
-			free(buffer);
 			return (-1);
 		}
 	}
@@ -88,7 +82,6 @@ int copy_file(char *file_from, char *file_to)
 	exit98_check(read_actual, file_from);
 
 	close_all(fd_from, fd_to);
-	free(buffer);
 	return (1);
 }
 
