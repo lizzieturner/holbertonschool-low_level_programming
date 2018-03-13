@@ -68,6 +68,13 @@ int copy_file(char *file_from, char *file_to)
 		}
 	}
 
+	if (read_actual == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s", file_from);
+		free(buffer);
+		exit(98);
+	}
+
 	close_all(fd_from, fd_to);
 	free(buffer);
 	return (1);
