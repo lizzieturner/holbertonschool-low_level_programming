@@ -1,6 +1,25 @@
 #include "holberton.h"
 
 /**
+ * exit98_check - checks if file_from exists and can be read
+ * @x: int to check
+ * @file: file that does not exist or cannot be read
+ *
+ * Return: 0 if successful, exits early with code 98 otherwise
+ */
+
+int exit98_check(int x, char *file)
+{
+	if (x == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s", file);
+		exit(98);
+	}
+
+	return (0);
+}
+
+/**
  * close_all - closes all file descriptors
  * @fd1: file directory 1
  * @fd2: file directory 2
@@ -44,12 +63,7 @@ int copy_file(char *file_from, char *file_to)
 	fd_from = open(file_from, O_RDONLY);
 	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	if (fd_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", file_from);
-		free(buffer);
-		exit(98);
-	}
+	exit98_check(fd_from, file_from);
 
 	if (fd_to == -1)
 	{
@@ -57,14 +71,10 @@ int copy_file(char *file_from, char *file_to)
 		return (-1);
 	}
 
-	while ((read_actual = read(fd_from, buffer, sizeof(buffer))) > 0)
+	while ((read_actual = read(fd_from, buffer, 1024)) > 0)
 	{
 		if (read_actual == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s", file_from);
-			free(buffer);
-			exit(98);
-		}
+			exit98_check(read_actual, file_from);
 
 		write_actual = write(fd_to, buffer, read_actual);
 		if (write_actual == -1)
@@ -74,6 +84,8 @@ int copy_file(char *file_from, char *file_to)
 			return (-1);
 		}
 	}
+
+	exit98_check(read_actual, file_from);
 
 	close_all(fd_from, fd_to);
 	free(buffer);
