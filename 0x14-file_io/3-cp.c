@@ -57,7 +57,7 @@ int copy_file(char *file_from, char *file_to)
 		return (-1);
 	}
 
-	while ((read_actual = read(fd_from, buffer, 1024)) > 0)
+	while ((read_actual = read(fd_from, buffer, sizeof(buffer))) > 0)
 	{
 		if (read_actual == -1)
 		{
