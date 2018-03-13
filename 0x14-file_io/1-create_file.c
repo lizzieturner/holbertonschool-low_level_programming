@@ -44,9 +44,10 @@ int create_file(const char *filename, char *text_content)
 	length = _strlen(text_content);
 
 	write_actual = write(fd, text_content, length);
+	if (write_actual == -1)
+		return (-1);
 
 	close_check = close(fd);
-
 	if (close_check == -1 || write_actual == -1)
 		return (-1);
 
