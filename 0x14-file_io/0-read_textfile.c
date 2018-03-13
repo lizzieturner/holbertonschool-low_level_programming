@@ -13,7 +13,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *buffer;
 	ssize_t fd, read_actual, write_actual;
 
-	if (filename == NULL)
+	if (filename == NULL || letters <= 0)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
@@ -31,13 +31,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (read_actual == -1)
 		return (0);
 
-	close(fd);
+	close_check = close(fd);
+	if (close_check == -1)
+		return (0);
 
 	write_actual = write(STDOUT_FILENO, buffer, letters);
 	if (write_actual == -1)
 		return (0);
 
 	free(buffer);
+
+	printf("WRITE_ACTUAL: %li\n", write_actual);
 
 	return (read_actual);
 }
