@@ -62,9 +62,7 @@ int copy_file(char *file_from, char *file_to)
 	exit98_check(fd_from, file_from);
 
 	if (fd_to == -1)
-	{
 		return (-1);
-	}
 
 	while ((read_actual = read(fd_from, buffer, 1024)) > 0)
 	{
@@ -108,10 +106,7 @@ int main(int argc, char *argv[])
 	file_to = argv[2];
 
 	if (file_from == NULL)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
-	}
+		exit98_check(-1, file_from);
 
 	copy_status = copy_file(file_from, file_to);
 
