@@ -44,6 +44,9 @@ int copy_file(char *file_from, char *file_to)
 		}
 	}
 
+	if (read_actual == -1)
+		return (-1);
+
 	close_check_from = close(fd_from);
 	close_check_to = close(fd_to);
 	if (close_check_from == -1 || close_check_to == -1)
