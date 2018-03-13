@@ -1,6 +1,29 @@
 #include "holberton.h"
 
 /**
+ * close_all - closes all file descriptors
+ * @fd1: file directory 1
+ * @fd2: file directory 2
+ *
+ * Return: 0 if successful
+ */
+
+int close_all(int fd1, int fd2)
+{
+	int close_check1 = close(fd1);
+	int close_check2 = close(fd2);
+
+	if (close_check1 == -1 || close_check2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n",
+			close_check1 == -1 ? fd1 : fd2);
+		exit(100);
+	}
+
+	return (0);
+}
+
+/**
  * copy_file - copies the contents of a file to another file
  * @file_from: file to copy from
  * @file_to: file to copy to
@@ -10,7 +33,7 @@
 
 int copy_file(char *file_from, char *file_to)
 {
-	int fd_from, fd_to, close_check_from, close_check_to;
+	int fd_from, fd_to;
 	ssize_t read_actual, write_actual;
 	char *buffer;
 
@@ -39,23 +62,13 @@ int copy_file(char *file_from, char *file_to)
 		write_actual = write(fd_to, buffer, read_actual);
 		if (write_actual == -1)
 		{
+			close_all(fd_from, fd_to);
 			free(buffer);
 			return (-1);
 		}
 	}
 
-	if (read_actual == -1)
-		return (-1);
-
-	close_check_from = close(fd_from);
-	close_check_to = close(fd_to);
-	if (close_check_from == -1 || close_check_to == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", close_check_to == -1
-			? fd_to : fd_from);
-		exit(100);
-	}
-
+	close_all(fd_from, fd_to);
 	free(buffer);
 	return (1);
 }
