@@ -59,6 +59,13 @@ int copy_file(char *file_from, char *file_to)
 
 	while ((read_actual = read(fd_from, buffer, 1024)) > 0)
 	{
+		if (read_actual == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s", file_from);
+			free(buffer);
+			exit(98);
+		}
+
 		write_actual = write(fd_to, buffer, read_actual);
 		if (write_actual == -1)
 		{
@@ -66,13 +73,6 @@ int copy_file(char *file_from, char *file_to)
 			free(buffer);
 			return (-1);
 		}
-	}
-
-	if (read_actual == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", file_from);
-		free(buffer);
-		exit(98);
 	}
 
 	close_all(fd_from, fd_to);
