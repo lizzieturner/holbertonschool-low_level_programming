@@ -42,7 +42,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	free(buffer);
 
-	printf("WRITE_ACTUAL: %li\n", write_actual);
-
 	return (read_actual);
 }
