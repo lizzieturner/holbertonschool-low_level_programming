@@ -1,8 +1,8 @@
-# 0x16 - Doubly Linked Listsx
+# 0x16 - Doubly Linked Lists
 
 ## OBJECTIVES  
-	      * What is a doubly linked list  
-	      * How to use doubly linked lists  
+   * What is a doubly linked list  
+   * How to use doubly linked lists  
 
 ## MANDATORY  
 **[0-print_dlistint.c](0-print_dlistint.c)** - Write a function that prints all elements of a `dlistint_t` list  
