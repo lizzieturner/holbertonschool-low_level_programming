@@ -4,6 +4,12 @@
    * What is a doubly linked list  
    * How to use doubly linked lists  
 
+## REQUIREMENTS  
+   * allowed editors: `vi`, `vim`, `emacs`
+   * allowed standard library functions: `malloc`, `free`, `printf`, `exit`
+   * compiled on Ubuntu 14.04 LTS
+   * compiled with `gcc 4.8.4` with the flags `-Wall`, `-Wextra`, `-Werror`, and `pedantic`
+
 ## MANDATORY  
 **[0-print_dlistint.c](0-print_dlistint.c)** - Write a function that prints all elements of a `dlistint_t` list  
 **[1-dlistint_len.c](1-dlistint_len.c)** - Write a function that returns the number of elements in a `dlistint_t` list  
@@ -13,9 +19,9 @@
 **[5-get_dnodeint.c](5-get_dnodeint.c)** - Write a function that returns the nth node of a `dlistint_t` list  
 **[6-sum_dlistint.c](6-sum_dlistint.c)** - Write a function that returns the sum of all the data in a `dlistint_t` list  
 **[7-insert_dnodeint.c](7-insert_dnodeint.c)** - Write a function that inserts a new node at a given position  
-**[8-delete_dnodeint.c](8-delete_dnodeint.c)** - Write a function that deletes the node at index `index` of a `dlistint_t` list  
+**[8-delete_dnodeint.c](8-delete_dnodeint.c)** - Write a function that deletes the node at position `index` of a `dlistint_t` list  
 
 ## ADVANCED  
-**[100-password](100-password)** - Find the password for [crackme4)(https://github.com/holbertonschool/0x16.c)  
+**[100-password](100-password)** - Find the password for [crackme4](https://github.com/holbertonschool/0x16.c)  
 **[102-result](102-result)** - Find the largest palindrome made from the product of two 3-digit numbers.  
 **[103-keygen.c](103-keygen.c)** - Write a keygen for [crackme5](https://github.com/holbertonschool/0x16.c)  
