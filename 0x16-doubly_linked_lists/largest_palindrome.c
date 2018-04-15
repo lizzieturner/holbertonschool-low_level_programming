@@ -32,5 +32,5 @@ int main(void)
 	}
 
 	printf("no palindromes found :(\n");
-	return (-1);
+	return (0);
 }
