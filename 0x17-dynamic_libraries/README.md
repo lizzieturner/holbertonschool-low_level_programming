@@ -38,8 +38,7 @@ char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 ```   
 **[1-create_dynamic_lib.sh](1-create_dynamic_lib.sh)** - Create a script that creates a dynamic library called `liball.so` from all the `.c` files that are in the current directory.  
-**[BLOG POST](https://google.com)** - 
-Write a blog post describing the differences between static and dynamic libraries. It should cover:
+**[BLOG POST: Dynamic Libraries](https://t.co/OfsVzSMf5r)** - Write a blog post describing the differences between static and dynamic libraries. It should cover:  
       * Why using libraries in general
       * How do they work
       * How to create them (Linux only)
@@ -50,4 +49,4 @@ Write a blog post describing the differences between static and dynamic librarie
 
 ## ADVANCED  
 **[100-operations.so](100-operations.so)** - Create a dynamic library that contains C functions that can be called from Python.  
-**[101-make_me_win.sh](101-make_me_win.sh)** - Use [this code](https://github.com/holbertonschool/0x17.c)
+**[101-make_me_win.sh](101-make_me_win.sh)** - Use [this code](https://github.com/holbertonschool/0x17.c) to win the jackpot every time! (See the repository for more information)
