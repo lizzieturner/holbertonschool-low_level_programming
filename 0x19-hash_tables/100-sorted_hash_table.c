@@ -102,6 +102,7 @@ shash_node_t *create_sht_node(const char *key, const char *value)
 		free(new);
 		return (NULL);
 	}
+	new->next = new->snext = new->sprev = NULL;
 	return (new);
 }
 
@@ -124,27 +125,25 @@ int add_sht_node(shash_table_t *ht, shash_node_t *node)
 		return (1);
 	}
 	runner = ht->shead;
-	if (strcmp(node->key, runner->key) < 0)
+	while (runner != NULL)
 	{
-		ht->shead->sprev = node;
-		node->snext = ht->shead;
-		ht->shead = node;
-		return (1);
-	}
-	runner = runner->snext;
-	while (runner != NULL && strcmp(node->key, runner->key) > 0)
+		if (strcmp(node->key, runner->key) < 0)
+		{
+			node->snext = runner;
+			node->sprev = runner->sprev;
+			runner->sprev = node;
+			if (node-> sprev != NULL)
+				node->sprev->snext = node;
+			else
+				ht->shead = node;
+			return (1);
+		}
 		runner = runner->snext;
-	if (runner == NULL)
-	{
-		node->sprev = ht->stail;
-		ht->stail->snext = node;
-		ht->stail = node;
-		return (1);
 	}
-	node->sprev = runner->sprev;
-	runner->sprev->snext = node;
-	runner->sprev = node;
-	node->snext = runner;
+
+	node->sprev = ht->stail;
+	ht->stail->snext = node;
+	ht->stail = node;
 	return (1);
 }
 
