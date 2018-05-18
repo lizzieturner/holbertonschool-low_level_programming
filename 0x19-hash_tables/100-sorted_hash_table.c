@@ -117,8 +117,6 @@ int add_sht_node(shash_table_t *ht, shash_node_t *node)
 {
 	shash_node_t *runner;
 
-	if (ht == NULL)
-		return (0);
 	if (ht->shead == NULL)
 	{
 		ht->shead = node;
@@ -134,7 +132,7 @@ int add_sht_node(shash_table_t *ht, shash_node_t *node)
 		return (1);
 	}
 	runner = runner->snext;
-	while (runner != NULL && strcmp(runner->key, node->key) > 0)
+	while (runner != NULL && strcmp(node->key, runner->key) > 0)
 		runner = runner->snext;
 	if (runner == NULL)
 	{
@@ -170,12 +168,10 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	runner = ht->array[index];
 	while (runner != NULL)
 	{
-		if (strcmp(key, runner->key) == 0)
+		if (strcmp(key, runner->key) != 0)
 			return (runner->value);
 		runner = runner->next;
 	}
-
-
 	return (NULL);
 }
 
