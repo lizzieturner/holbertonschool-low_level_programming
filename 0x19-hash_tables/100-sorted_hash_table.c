@@ -54,10 +54,10 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	runner = ht->array[index];
 	while (runner != NULL)
 	{
-		if (strcmp(runner->key, key) != 0)
+		if (strcmp(runner->key, key) == 0)
 		{
 			free(runner->value);
-			runner->value = strdup((char *)value);
+			runner->value = strdup(value);
 			if (runner->value == NULL)
 				return (0);
 			return (1);
@@ -132,7 +132,7 @@ int add_sht_node(shash_table_t *ht, shash_node_t *node)
 			node->snext = runner;
 			node->sprev = runner->sprev;
 			runner->sprev = node;
-			if (node-> sprev != NULL)
+			if (node->sprev != NULL)
 				node->sprev->snext = node;
 			else
 				ht->shead = node;
