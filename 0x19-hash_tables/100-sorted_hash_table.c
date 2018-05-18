@@ -12,8 +12,10 @@ shash_table_t *shash_table_create(unsigned long int size)
 	shash_table_t *ht;
 	unsigned long int index;
 
+	if (size <= 0)
+		return (NULL);
 	ht = malloc(sizeof(shash_table_t));
-	if (ht == NULL || size == 0)
+	if (ht == NULL)
 		return (NULL);
 	ht->size = size;
 	ht->shead = NULL;
@@ -43,24 +45,21 @@ shash_table_t *shash_table_create(unsigned long int size)
 
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
-	shash_node_t *runner;
-	shash_node_t *new;
+	shash_node_t *runner, *new;
 	unsigned long int index;
 
-	if (ht == NULL || ht->size == 0 || key == NULL ||
-	    strcmp(key, "") == 0 || value == NULL)
+	if (ht == NULL || strcmp(key, "") == 0 || value == NULL)
 		return (0);
-	index = key_index((unsigned char *)key, ht->size);
+	index = key_index((const unsigned char *)key, ht->size);
 	runner = ht->array[index];
 	while (runner != NULL)
 	{
-		if (strcmp(key, runner->key) == 0)
+		if (strcmp(key, runner->key) != 0)
 		{
-			if (strcmp(runner->value, value) != 0)
-			{
-				free(runner->value);
-				runner->value = strdup(value);
-			}
+			free(runner->value);
+			runner->value = strdup((char *)value);
+			if (runner->value == NULL)
+				return (0);
 			return (1);
 		}
 		runner = runner->next;
@@ -70,10 +69,9 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 	new->next = ht->array[index];
 	ht->array[index] = new;
-	new->sprev = new->snext = NULL;
-	if (add_sht_node(ht, new) == NULL)
-		return (0);
-	return (1);
+	new->snext = NULL;
+	new->sprev = NULL;
+	return (add_sht_node(ht, new));
 }
 
 /**
@@ -104,7 +102,6 @@ shash_node_t *create_sht_node(const char *key, const char *value)
 		free(new);
 		return (NULL);
 	}
-	new->next = new->snext = new->sprev = NULL;
 	return (new);
 }
 
@@ -113,43 +110,44 @@ shash_node_t *create_sht_node(const char *key, const char *value)
  * @ht: hash table
  * @node: node to add
  *
- * Return: new node, or NULL if failure
+ * Return: 1 if successful, 0 otherwise
  */
 
-shash_node_t *add_sht_node(shash_table_t *ht, shash_node_t *node)
+int add_sht_node(shash_table_t *ht, shash_node_t *node)
 {
 	shash_node_t *runner;
 
-	if (ht == NULL || node == NULL)
-		return (NULL);
-	if (ht->shead == NULL && ht->stail == NULL)
+	if (ht == NULL)
+		return (0);
+	if (ht->shead == NULL)
 	{
 		ht->shead = node;
 		ht->stail = node;
-		return (node);
+		return (1);
 	}
 	runner = ht->shead;
-	if (strcmp(runner->key, node->key) < 0)
+	if (strcmp(node->key, runner->key) < 0)
 	{
 		ht->shead->sprev = node;
 		node->snext = ht->shead;
 		ht->shead = node;
-		return (node);
+		return (1);
 	}
+	runner = runner->snext;
 	while (runner != NULL && strcmp(runner->key, node->key) > 0)
-		runner = runner->next;
+		runner = runner->snext;
 	if (runner == NULL)
 	{
 		node->sprev = ht->stail;
 		ht->stail->snext = node;
 		ht->stail = node;
-		return (node);
+		return (1);
 	}
 	node->sprev = runner->sprev;
 	runner->sprev->snext = node;
 	runner->sprev = node;
 	node->snext = runner;
-	return (node);
+	return (1);
 }
 
 
