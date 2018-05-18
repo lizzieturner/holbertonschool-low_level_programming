@@ -54,7 +54,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	runner = ht->array[index];
 	while (runner != NULL)
 	{
-		if (strcmp(key, runner->key) != 0)
+		if (strcmp(runner->key, key) != 0)
 		{
 			free(runner->value);
 			runner->value = strdup((char *)value);
@@ -168,7 +168,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	runner = ht->array[index];
 	while (runner != NULL)
 	{
-		if (strcmp(key, runner->key) == 0)
+		if (strcmp(runner->key, key) == 0)
 			return (runner->value);
 		runner = runner->next;
 	}
