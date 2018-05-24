@@ -59,13 +59,13 @@ Time Complexity: [105-O](105-O)
 **[106-bitonic_sort.c](106-bitonic_sort.c)** - the [Bitonic sort](https://en.wikipedia.org/wiki/Bitonic_sorter) algorithm   
 Time Complexity: [106-O](106-O)   
 
-**[107-quick_sort_hoare.c](107-quick_sort_hoare.c)** - the [https://en.wikipedia.org/wiki/Quicksort](https://en.wikipedia.org/wiki/Quicksort) algorithm using the [Hoare](https://en.wikipedia.org/wiki/Quicksort#Hoare_partition_scheme_) partition scheme   
+**[107-quick_sort_hoare.c](107-quick_sort_hoare.c)** - the [Quicksort](https://en.wikipedia.org/wiki/Quicksort) algorithm using the `Hoare` partition scheme   
 Time Complexity: [107-O](107-O)   
 
 **[1000-sort_deck.c](1000-sort_deck.c)**, **[deck.h](deck.h)** - a card sorting algorithm  
 Cards will be sorted in the following order:   
-      * `Ace` to `King`   
-      * spades to diamonds   
+   * `Ace` to `King`   
+   * spades to diamonds   
 
 ## AUTHORS   
 
