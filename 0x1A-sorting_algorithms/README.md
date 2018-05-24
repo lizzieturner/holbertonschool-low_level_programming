@@ -36,7 +36,7 @@ Time Complexity: [2-O](2-O)
 **[3-quick_sort.c](3-quick_sort.c)** - the [Quicksort](https://en.wikipedia.org/wiki/Quicksort) algorithm   
 Time Complexity: [3-O](3-O)   
 
-### ADVANCED EXERCISE   
+### ADVANCED EXERCISES   
 
 **[100-shell_sort.c](100-shell_sort.c)** - the [Shellsort](https://en.wikipedia.org/wiki/Shellsort) algorithm   
 Time Complexity: [100-O](100-O)   
