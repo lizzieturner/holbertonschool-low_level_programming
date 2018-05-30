@@ -41,5 +41,7 @@ void heap_sort(int *array, size_t size);
 void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
+void qsh(int *array, ssize_t start, ssize_t end, size_t size);
+ssize_t partition_h(int *array, ssize_t start, ssize_t end, size_t size);
 
 #endif
