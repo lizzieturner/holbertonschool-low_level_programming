@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * quick_sort - sorts array using quicksort with hoare partitioning
+ * quick_sort_hoare - sorts array using quicksort with hoare partitioning
  * @array: array to sort
  * @size: size of array
  */
