@@ -35,20 +35,12 @@ int rec_bin_adv(int *array, size_t left, size_t right, int value)
 	int mid = left + (right - left) / 2;
 
 	print_binary(array, left, right);
-	if (array[mid] == value)
-	{
-		print_binary(array, left, mid);
-		if (array[mid] == array[mid - 1])
-		{
-			print_binary(array, mid - 1, mid);
-			mid--;
-		}
+	if (value == array[mid] && value != array[mid - 1])
 		return (mid);
-	}
 	if (right >= left)
 	{
-		if (array[mid] > value)
-			return (rec_bin_adv(array, left, mid - 1, value));
+		if (array[mid] >= value)
+			return (rec_bin_adv(array, left, mid, value));
 		return (rec_bin_adv(array, mid + 1, right, value));
 	}
 	return (-1);
