@@ -49,6 +49,7 @@ void print_binary(int *array, size_t left, size_t right);
 /* advanced exercises */
 int jump_search(int *array, size_t size, int value);
 int min(int a, int b);
+int max(int a, int b);
 int interpolation_search(int *array, size_t size, int value);
 int exponential_search(int *array, size_t size, int value);
 int advanced_binary(int *array, size_t size, int value);
