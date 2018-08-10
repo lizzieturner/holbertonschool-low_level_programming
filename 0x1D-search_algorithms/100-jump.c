@@ -13,7 +13,7 @@
 int jump_search(int *array, size_t size, int value)
 {
 	size_t jump;
-	int l = 0, r = 0, left = 0, right = 0;
+	int l = 0, r, lft, rgt;
 	int int_size = (int)size;
 
 	if (array != NULL && size != 0)
@@ -28,11 +28,13 @@ int jump_search(int *array, size_t size, int value)
 
 			l += jump;
 		}
-		left = min(l, r);
-		right = max(l, r);
-		printf("Value found between indexes [%u] and [%u]\n", left, right);
-		l = left;
-		r = min(int_size - 1, right);
+		lft = min(l, r);
+		rgt = max(l, r);
+		printf("Value found between indexes [%u] and [%u]\n", lft, rgt);
+		l = lft;
+		if (l >= int_size || array[l] > value)
+			return (-1);
+		r = min(int_size - 1, rgt);
 		while (l <=  r && array[l] <= value)
 		{
 			printf("Value checked array[%u] = [%i]\n", l, array[l]);
@@ -68,6 +70,5 @@ int min(int a, int b)
 
 int max(int a, int b)
 {
-        return (a > b ? a : b);
+	return (a > b ? a : b);
 }
-
